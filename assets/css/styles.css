@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-areas: "nav" "filters" "main" "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 120px 100px 1fr 100px;
+  height: 100vh;
+}
+body .boton {
+  cursor: pointer;
+  padding: 5 10px;
+  width: 35px;
+  margin: 5px;
+  border: none;
+  background-color: #00c6c6;
+  color: white;
+}
+body nav {
+  grid-area: nav;
+  background-image: linear-gradient(to right top, #606060, #667c94, #36a0be, #00c6c6, #20e7a7);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
+}
+body nav .nav_logo {
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+}
+body nav .nav_logo h1 {
+  font-size: 30px;
+}
+body nav .nav_logo i {
+  font-size: 30px;
+}
+body nav .nav_icon {
+  display: flex;
+}
+body nav .navbar {
+  flex-grow: 1;
+  display: none;
+}
+body nav .navbar ul {
+  list-style: none;
+  display: flex;
+  text-align: start;
+}
+body .filtros {
+  grid-area: filters;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aqua;
+  color: black;
+  text-align: center;
+}
+body .filtros label {
+  font-size: 30px;
+}
+body .filtros select {
+  cursor: pointer;
+  padding: 5 10px;
+  width: 50%;
+  margin: 5px;
+  border: none;
+  color: black;
+}
+body main {
+  grid-area: main;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+body main .grid {
+  padding: 10px;
+  height: calc(100vh - 340px);
+  display: flex;
+  gap: 10px;
+  flex-flow: column;
+  align-items: center;
+  overflow-y: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+body main .grid .card {
+  background-color: rgba(221, 238, 221, 0.9333333333);
+  border-radius: 15px;
+  display: none;
+}
+body main .grid .card:first-child {
+  display: block;
+}
+body main .grid .card .card_image figure {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  overflow: hidden;
+  width: 300px;
+  height: 100%;
+}
+body main .grid .card .card_image figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main .grid .card .card_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+body main .grid .card .card_body button {
+  cursor: pointer;
+  padding: 5 10px;
+  width: 50%;
+  border: none;
+  background-color: #00c6c6;
+  color: white;
+}
+body main .paginate {
+  height: 40px;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+}
+body footer {
+  grid-area: footer;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #667c94;
+}
+
+@media (min-width: 992px) {
+  body {
+    grid-template-areas: "nav filters" "nav main" "footer main";
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 120px 1fr 120px;
+  }
+  body nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  body nav .nav_icon {
+    display: none;
+  }
+  body nav .navbar {
+    flex-grow: 1;
+    display: block;
+  }
+  body nav .navbar ul {
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  body main .grid {
+    height: calc(100vh - 160px);
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  body main .grid .card {
+    display: block;
+    margin: 10px;
+  }
+  body main .grid .card figure {
+    display: block;
+    width: 250px;
+    height: auto;
+  }
+  body main .grid .card figure img {
+    height: auto;
+  }
+}/*# sourceMappingURL=styles.css.map */
